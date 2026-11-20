@@ -9,7 +9,7 @@ A linguagem mistura minimalismo, sofisticação e um leve ar retrô: serifa edit
 - Slide de 1080×1350 px (4:5). Margem lateral de 84 px.
 - Arte feita em HTML/CSS e renderizada com Playwright (Chromium) em escala 3, depois reduzida para 1080×1350 com filtro LANCZOS. Exportar em JPEG de qualidade 92 para publicar.
 - Nunca usar IA generativa de imagem para texto ou identidade.
-- Molde de referência: `molde/modelo-aprovado.html`. Repositório do projeto: `romario199917-blip/Carrossel-maquina`.
+- Molde de referência: `molde/modelo-aprovado.html`. Para paleta padrão, usar `molde/kit.js` (mesmo CSS e modelos; ver `posts/2026-11-20-google-ads-ajuste/post.html`). O `report()` do kit acusa texto fora da margem (LARG), perto da seta (ALT) e vazando do cartão (VAZA). Repositório do projeto: `romario199917-blip/Carrossel-maquina`.
 
 ## Fontes
 
