@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+montar([
+{m:'capaB',tema:'musgo',luz:'18% 6%',pill:'Instagram · novidade',linhas:['Já apagou Story','<i>por causa de</i>',sel('uma letra?')],
+ obj:'biblioteca/recortes/pena.png',objStyle:'right:-20px;bottom:-40px;width:400px;transform:rotate(8deg);filter:drop-shadow(0 40px 40px rgba(0,0,0,.55)) saturate(.9)',
+ sub:'Agora dá pra<br><b style="color:var(--fg)">consertar no ar</b>'},
+{m:'texto',tema:'creme',luz:'15% 0%',pill:'Você conhece a cena',linhas:['Preço errado,','<i>Story no ar.</i>'],
+ body:'Você posta a promoção e alguém avisa que o valor saiu errado. Até agora, o jeito era apagar, repostar e perder quem já tinha visto e respondido.',
+ box:'E o erro sempre aparece <b>depois de postar.</b>'},
+{m:'dado',tema:'cafe',luz:'80% 6%',pill:'O que mudou',num:'15<span style="font-size:.42em;letter-spacing:-.02em;margin-left:18px">min</span>',fsN:440,topN:300,
+ linhas:['pra editar o Story','<i>depois de publicado</i>'],body:'Anunciado em 18 de novembro por Adam Mosseri, chefe do Instagram. <b style="color:var(--fg)">Visualizações, curtidas e respostas continuam lá.</b>'},
+{m:'comp',tema:'bordo',luz:'15% 5%',linhas:['O que entra','<i>na edição</i>'],topC:660,hC:475,
+ a:{lab:'Fica <b>de fora</b>',fsI:38,itens:['A foto ou o vídeo do Story','Qualquer ajuste depois dos 15 minutos']},
+ b:{lab:'Dá pra <b>mexer</b>',serif:true,fsI:66,itens:['Texto','Música','Figurinhas','Desenhos']}},
+{m:'lista',tema:'creme',luz:'85% 0%',pill:'Como fazer',linhas:['Três toques','<i>e tá corrigido</i>'],
+ itens:[['1','Abra o Story que você publicou.'],['2','Toque nos três pontos (ou em “Mais”).'],['3','Escolha editar, ajuste e salve.']],
+ nota:'A liberação é gradual. Pode não ter chegado na sua conta ainda.'},
+{m:'texto',tema:'musgo',luz:'85% 5%',extra:folha(.6),pill:'Vira rotina',linhas:['Postou?','<i>Releia na hora.</i>'],
+ body:'Preço, data, arroba, endereço. Você tem 15 minutos pra achar o erro antes que o cliente ache.',
+ boxLab:'Um <b>detalhe</b>',box:'O Story editado ganha um aviso de “editado”. <b>Quem vê fica sabendo.</b>'},
+{m:'fim',tema:'cafe',luz:'20% 5%',fundo:'<img class="bgimg" src="biblioteca/fundos/fundo-cafe-grao-sombra-01.jpg" style="filter:brightness(.5) saturate(.75)">',
+ linhas:['Errar no Story','ficou barato.'],script:'reler é de graça.',
+ body:'Quinze minutos resolvem o que antes <b>custava apagar e começar do zero.</b>',cta:'Envia pra quem posta na loja'}
+]);
+</script></body></html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+// camada de assunto: Natal (bordô e musgo da paleta padrão + neve desenhada em código)
+let sd=11;const rnd=()=>{sd=(sd*16807)%2147483647;return sd/2147483647};
+const neve=(n=70,op=.55)=>`<svg class="deco" viewBox="0 0 1080 1350" style="inset:0;width:1080px;height:1350px;opacity:${op}">${Array.from({length:n},()=>{const r=1.5+rnd()*5.5;return `<circle cx="${(rnd()*1080).toFixed(0)}" cy="${(190+rnd()*960).toFixed(0)}" r="${r.toFixed(1)}" fill="#fff" opacity="${(.25+rnd()*.6).toFixed(2)}" ${r>5?'filter="url(#b)"':''}/>`}).join('')}<defs><filter id="b"><feGaussianBlur stdDeviation="2.2"/></filter></defs></svg>`;
+montar([
+{m:'capaA',tema:'bordo',luz:'50% 40%',extra:neve(110,.7),pill:'McDonald\'s · Natal 2026',linhas:['36 anos depois,','<i>o Kevin arrumou</i>'],grande:'emprego.',fsG:330,sub:'E já é a <b style="color:var(--fg)">terceira marca</b> que contrata'},
+{m:'texto',tema:'creme',luz:'15% 0%',extra:wm('90','font-size:820px;right:-70px;bottom:-60px;opacity:.05'),pill:'17 de novembro',linhas:['Esqueceram dele','<i>de novo.</i>'],
+ body:'O McDonald\'s lançou o comercial de Natal com Macaulay Culkin de volta ao papel do Kevin. Agora ele fica sozinho numa lanchonete vazia.',
+ box:'O filme original é de 1990. <b>O menino hoje tem 46 anos.</b>'},
+{m:'lista',tema:'musgo',luz:'85% 5%',extra:neve(40,.35),pill:'A carteira de trabalho do Kevin',linhas:['Três marcas,','<i>um personagem</i>'],fsNum:66,wNum:150,pad:30,
+ itens:[['2018','Google: Kevin adulto, com assistente de voz em casa.'],['2025','Home Instead: empresa de cuidado domiciliar.'],['2026','McDonald\'s: o combo de Natal.']]},
+{m:'texto',tema:'bordo',luz:'80% 5%',extra:neve(40,.35),pill:'Por que contratam',linhas:['Ninguém precisa','<i>explicar nada.</i>'],
+ body:'Você já sabe quem é o menino, o que ele apronta e que é Natal. A marca não gasta um segundo apresentando ninguém.',
+ boxLab:'O que isso <b>compra</b>',box:'Os primeiros segundos do anúncio, <b>que é quando a maioria pula.</b>'},
+{m:'texto',tema:'creme',luz:'85% 0%',pill:'A virada',linhas:['O McDonald\'s','não criou nada.','<i>Alugou.</i>'],
+ body:'A lembrança de 1990 já morava na cabeça do público. A marca pagou pra entrar nela, com combo temático e meia de coleção.',
+ box:'Lembrança pronta é atalho. <b>A venda começa do meio.</b>'},
+{m:'lista',tema:'musgo',luz:'15% 5%',extra:folha(.5,true)+neve(30,.3),pill:'E no seu negócio',linhas:['Você também tem','<i>lembrança guardada</i>'],
+ itens:[['1','O produto que saiu de linha e o cliente ainda pede.'],['2','A foto do primeiro dia da loja.'],['3','A música, a gíria e o lugar que marcaram o seu bairro.']]},
+{m:'fim',tema:'bordo',luz:'20% 5%',extra:neve(110,.7),linhas:['Novidade pede','explicação.'],script:'lembrança, não.',
+ body:'Antes de inventar a próxima campanha, <b>veja o que seu cliente já guarda de você.</b>',cta:'Envia pra quem cuida da marca'}
+]);
+</script></body></html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+montar([
+{m:'capaA',tema:'cafe',luz:'50% 42%',fundo:'<img class="bgimg" src="biblioteca/fundos/fundo-cafe-grao-sombra-01.jpg" style="filter:brightness(.55) saturate(.75)">'+folha(.55),pill:'Google Ads · 2027',linhas:['Seus R$ 1.000','<i>no Google vão virar</i>'],grande:'R$ 971',fsG:380,mtG:-6,sub:'A partir de <b style="color:var(--fg)">1º de janeiro</b>'},
+{m:'dado',tema:'creme',luz:'15% 0%',pill:'O aviso',num:'2,9<span style="font-size:.5em;letter-spacing:0">%</span>',fsN:430,topN:310,
+ linhas:['de ajuste no custo','<i>dos anúncios</i>'],body:'Vale a partir de 1º de janeiro de 2027 pra contas do Google Ads faturadas no Brasil. <b style="color:var(--fg)">O aviso chegou aos anunciantes em novembro.</b>'},
+{m:'comp',tema:'musgo',luz:'85% 5%',extra:folha(.6,true),semCheck:true,linhas:['Quanto muda','<i>na prática</i>'],topC:660,hC:420,
+ a:{lab:'<b>Pré-pago</b>',big:'R$ 971',txt:'É o que vira anúncio a cada R$ 1.000 que você deposita.'},
+ b:{lab:'<b>Pós-pago</b>',big:'R$ 1.029',txt:'É a fatura de quem gasta R$ 1.000 em anúncio no mês.'},
+ nota:'Valores aproximados, antes dos outros tributos da nota.'},
+{m:'texto',tema:'bordo',luz:'80% 5%',pill:'O erro invisível',linhas:['Janeiro vai','parecer <i>pior.</i>'],
+ body:'O resultado cai um pouco e a culpa vai pro anúncio, pro público, pro algoritmo. Só que a campanha é a mesma.',
+ box:'A verba é que encolheu. <b>E quase ninguém refaz essa conta.</b>'},
+{m:'texto',tema:'creme',luz:'85% 0%',extra:wm('%','font-size:900px;right:-40px;bottom:-120px;opacity:.05'),pill:'Na Meta já é assim',linhas:['Lá o desconto','é de <i>12,15%.</i>'],
+ body:'Desde janeiro de 2026, a Meta repassa os impostos pro anunciante. No pré-pago, de cada R$ 1.000, R$ 878,50 viram anúncio.',
+ box:'Quem anuncia nos dois lugares <b>agora perde um pedaço da verba nos dois.</b>'},
+{m:'lista',tema:'cafe',luz:'85% 8%',extra:wm('3','font-size:1100px;left:-90px;bottom:-190px'),pill:'Antes de janeiro',linhas:['Três ajustes','<i>pra fazer agora</i>'],
+ itens:[['1','Refaça a verba de janeiro já contando os 2,9%.'],['2','Compare o custo por venda, e não só o valor gasto.'],['3','Avise o sócio ou o cliente antes da fatura chegar.']]},
+{m:'fim',tema:'creme',luz:'85% 0%',obj:'biblioteca/recortes/ampulheta.png',objStyle:'right:-10px;bottom:-30px;width:330px;mix-blend-mode:multiply;filter:sepia(.35) contrast(1.02);transform:rotate(6deg)',
+ linhas:['A conta muda','em janeiro.'],script:'refaça em dezembro.',wBody:500,
+ body:'Quem ajusta a verba agora <b>não confunde taxa com campanha ruim.</b>',cta:'Salva pra refazer a verba',icone:'salva'}
+]);
+</script></body></html>
