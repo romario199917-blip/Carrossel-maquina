@@ -1,0 +1,11 @@
+{
+  "name": "carrossel-maquina",
+  "private": true,
+  "description": "Molde e posts do carrossel @romariorenan.mkt",
+  "dependencies": {
+    "@fontsource/league-gothic": "*",
+    "@fontsource/cormorant-garamond": "*",
+    "@fontsource/pinyon-script": "*",
+    "@fontsource-variable/playfair": "*"
+  }
+}

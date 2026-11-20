@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:LG;src:url(node_modules/@fontsource/league-gothic/files/league-gothic-latin-400-normal.woff2)}
+
+@font-face{font-family:Disp;src:url(node_modules/@fontsource-variable/playfair/files/playfair-latin-standard-normal.woff2) format('woff2-variations');font-weight:300 900;font-stretch:87.5% 112.5%}
+@font-face{font-family:Corm;src:url(node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:Corm;src:url(node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:Corm;src:url(node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-italic.woff2);font-weight:600;font-style:italic}
+@font-face{font-family:Pinyon;src:url(node_modules/@fontsource/pinyon-script/files/pinyon-script-latin-400-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0b0b0b;display:flex;flex-wrap:wrap;gap:40px;padding:40px;width:2300px}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;-webkit-font-smoothing:antialiased}
+.bg{position:absolute;inset:0;width:100%;height:100%}
+.s::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;opacity:.24;mix-blend-mode:overlay;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.c{position:absolute;z-index:5;left:130px;right:130px}
+.obj{position:absolute;z-index:2;pointer-events:none}
+
+/* tipografia do sistema */
+.cond{font-family:LG;font-weight:400;text-transform:uppercase;line-height:.9;display:inline-block;white-space:nowrap;letter-spacing:.012em}
+.scr{font-family:Pinyon;line-height:1;white-space:nowrap}
+.sp{font-family:Corm;font-weight:700;text-transform:uppercase;letter-spacing:.22em;font-variant-numeric:lining-nums}
+.body{font-family:Corm;font-weight:600;font-size:46px;line-height:1.22;font-variant-numeric:lining-nums}
+.body b{font-weight:700}
+
+/* temas */
+.dark{color:#F3E9D6}
+.dark .cond{text-shadow:0 1px 0 rgba(0,0,0,.55),0 2px 1px rgba(0,0,0,.35),0 10px 22px rgba(0,0,0,.45)}
+.dark .acc{color:#D2AE78}
+.dark .body{color:#E9DCC3}
+.light{color:#2E1D12}
+.light .cond{text-shadow:0 1px 0 rgba(255,248,232,.7)}
+.light .acc{color:#7A2530}
+.light .body{color:#3B2819}
+
+/* número grande */
+.num{font-family:LG;font-weight:400;font-size:250px;line-height:.8;display:inline-block}
+.dark .num{color:#D2AE78;text-shadow:0 2px 0 #3a2511,0 12px 24px rgba(0,0,0,.55)}
+.light .num{color:#9A6D36;text-shadow:0 1px 0 rgba(255,248,232,.7),0 3px 0 rgba(90,60,25,.35)}
+
+/* quadro "como corrigir" */
+.fix{margin-top:52px;padding:40px 46px 40px;position:relative}
+.dark .fix{background:rgba(20,12,7,.55);border:1.5px solid rgba(210,174,120,.55);box-shadow:0 30px 50px rgba(0,0,0,.35)}
+.light .fix{background:#2E1D12;color:#F3E9D6;box-shadow:0 26px 40px rgba(60,35,15,.3)}
+.light .fix .body{color:#EADCC2}
+.fix .tag{position:absolute;top:-30px;left:44px;padding:8px 22px;font-family:Corm;font-weight:700;font-size:28px;letter-spacing:.24em;text-transform:uppercase}
+.dark .fix .tag{background:#D2AE78;color:#24160d}
+.light .fix .tag{background:#7A2530;color:#F3E9D6}
+
+/* rodapé */
+.sign{position:absolute;z-index:6;left:0;right:0;bottom:84px;text-align:center}
+.sign .n{font-family:Pinyon;font-size:60px;line-height:1}
+.sign .m{font-family:Corm;font-weight:700;font-size:28px;letter-spacing:.55em;padding-left:.55em}
+.dark .sign .n{color:#D2AE78}.light .sign .n{color:#7A2530}
+.pg{position:absolute;z-index:6;left:96px;bottom:118px;font-family:Corm;font-weight:700;font-size:32px;font-variant-numeric:lining-nums;letter-spacing:.18em;opacity:.85}
+.go{position:absolute;z-index:6;right:84px;bottom:96px;width:88px;height:88px;border-radius:50%;display:grid;place-items:center;border:1.5px solid}
+.dark .go{border-color:rgba(210,174,120,.75)}.light .go{border-color:rgba(122,37,48,.7)}
+
+.row{display:flex;justify-content:center;align-items:flex-end}
+.gold{color:#D2AE78}
+</style></head><body>
+<div id="out"></div>
+<script src="POSTFILE"></script>
+<script>
+const P=window.POST;
+const BG={couro:'biblioteca/templates-unq/unq-couro-janela-01.png',moldura:'biblioteca/templates-unq/unq-papel-moldura-01.png',rasgado:'biblioteca/templates-unq/unq-papel-rasgado-01.png'};
+const OBJ={
+ ampulheta:'right:-80px;top:40px;width:300px;transform:rotate(10deg);filter:blur(5px) brightness(.5) sepia(.25);opacity:.8',
+ envelope:'right:-170px;top:-40px;width:430px;transform:rotate(16deg);filter:blur(6px) brightness(.5) sepia(.3);opacity:.85',
+ pena:'right:-40px;top:120px;width:260px;transform:rotate(12deg);filter:blur(4px) brightness(.9) sepia(.2);opacity:.75'};
+const OBJSRC={ampulheta:'recortes/ampulheta.png',envelope:'recortes/envelope-lacre.png',pena:'recortes/pena.png'};
+const arrow=c=>`<svg width="36" height="18" viewBox="0 0 36 18"><path d="M2 9h30M25 2l7 7-7 7" fill="none" stroke="${c}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const sign='<div class="sign"><div class="n">Romário Renan</div><div class="m">MKT</div></div>';
+const N=P.slides.length+2, pg=n=>`<div class="pg">${String(n).padStart(2,'0')} / ${String(N).padStart(2,'0')}</div>`;
+const C=P.capa;
+let h=`<section class="s dark" id="s1">
+  <img class="bg" src="${BG.couro}">
+  <div class="bg" style="z-index:1;background:radial-gradient(60% 45% at 50% 44%,rgba(0,0,0,0),rgba(0,0,0,.42))"></div>
+  ${C.obj?`<img class="obj" src="biblioteca/${OBJSRC[C.obj]}" style="left:-110px;top:-70px;width:340px;transform:rotate(-14deg);filter:blur(5px) brightness(.5) sepia(.3);opacity:.85">`:''}
+  <div class="c capa" style="top:215px;left:0;right:0;text-align:center">
+    <div class="sp gold" style="font-size:40px">${C.kicker}</div>
+    ${C.linhas.map((l,i)=>`<div class="row" style="margin-top:${i?4:30}px"><span class="cond" data-g="a" style="font-size:190px">${l}</span></div>`).join('')}
+    <div class="scr gold fit" style="font-size:170px;display:inline-block;margin:-44px 0 0 ${C.scriptX||0}px;position:relative;z-index:2;text-shadow:0 3px 0 #2a1a0e,0 10px 26px rgba(0,0,0,.75)">${C.script}</div>
+    <div class="row" style="margin-top:-18px"><span class="cond" data-g="b" style="font-size:330px">${C.grande}</span></div>
+    <div style="margin-top:34px;display:flex;align-items:center;justify-content:center;gap:24px">
+      <i style="display:block;width:50px;height:1.5px;background:#D2AE78;opacity:.8"></i>
+      <span class="sp" style="font-size:40px;white-space:nowrap;letter-spacing:.16em">${C.sub}</span>
+      <i style="display:block;width:50px;height:1.5px;background:#D2AE78;opacity:.8"></i>
+    </div>
+  </div>
+  ${sign}<div class="go">${arrow('#F3E9D6')}</div>
+</section>`;
+P.slides.forEach((d,i)=>{
+ const n=i+2, ac=d.t==='dark'?'#F3E9D6':'#7A2530';
+ h+=`<section class="s ${d.t}" id="s${n}">
+  <img class="bg" src="${BG[d.bg]}">
+  ${d.t==='dark'?'<div class="bg" style="z-index:1;background:radial-gradient(70% 55% at 45% 45%,rgba(0,0,0,0),rgba(0,0,0,.42))"></div>':''}
+  ${d.obj?`<img class="obj" src="biblioteca/${OBJSRC[d.obj]}" style="${OBJ[d.obj]}">`:''}
+  <div class="c" style="top:110px">
+   <div style="display:flex;align-items:flex-end;gap:0">
+     <span class="num">${d.num}</span>
+     <span class="scr acc" style="font-size:112px;margin:0 0 -2px 18px">${d.lab}</span>
+   </div>
+   <div style="margin-top:34px"><span class="cond" data-g="a" style="font-size:160px">${d.l1}</span></div>
+   <div><span class="cond acc" data-g="a" style="font-size:160px">${d.l2}</span></div>
+   <div class="body" style="margin-top:30px">${d.body}</div>
+   <div class="fix"><div class="tag">${d.tag}</div><div class="body">${d.box}</div></div>
+  </div>
+  ${pg(n)}${sign}<div class="go">${arrow(ac)}</div>
+ </section>`;
+});
+const F=P.fim;
+h+=`<section class="s dark" id="s${N}">
+  <img class="bg" src="${BG.couro}">
+  <div class="bg" style="z-index:1;background:radial-gradient(60% 45% at 50% 44%,rgba(0,0,0,0),rgba(0,0,0,.42))"></div>
+  <img class="obj" src="biblioteca/recortes/vela.png" style="left:-40px;bottom:-80px;height:620px;filter:blur(7px) brightness(.8);opacity:.9">
+  <div class="obj" style="left:20px;bottom:450px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,190,110,.45),transparent 70%);filter:blur(20px)"></div>
+  <div class="c" style="top:250px;left:0;right:0;text-align:center">
+    <div class="sp acc" style="font-size:40px">${F.kicker}</div>
+    ${F.linhas.map((l,i)=>`<div style="margin-top:${i?0:34}px;display:flex;justify-content:center"><span class="cond" data-g="a" style="font-size:200px">${l}</span></div>`).join('')}
+    <div class="scr acc fit" style="font-size:180px;display:inline-block;margin-top:-50px;position:relative;text-shadow:0 3px 0 #2a1a0e,0 10px 26px rgba(0,0,0,.75)">${F.script}</div>
+    <div class="body" style="margin:16px auto 0;max-width:800px;font-size:50px">${F.body}</div>
+    <div style="margin:56px auto 0;display:inline-flex;align-items:center;gap:20px;border:1.5px solid rgba(210,174,120,.8);padding:24px 44px;background:rgba(20,12,7,.45)">
+      <svg width="34" height="30" viewBox="0 0 34 30"><path d="M2 14 32 2 22 28l-6-10z M16 18 32 2" fill="none" stroke="#D2AE78" stroke-width="2.4" stroke-linejoin="round"/></svg>
+      <span class="sp" style="font-size:36px;color:#F3E9D6">${F.cta}</span>
+    </div>
+  </div>
+  ${pg(N)}${sign}
+</section>`;
+document.getElementById('out').outerHTML=h;
+window.fitDone=false;
+document.fonts.load('160px LG').then(()=>document.fonts.ready).then(()=>{
+ document.querySelectorAll('.s').forEach(s=>{
+  const avail=1080-130-130;
+  ['a','b'].forEach(g=>{
+   const els=[...s.querySelectorAll(`.cond[data-g="${g}"]`)]; if(!els.length)return;
+   let fs=Math.min(...els.map(e=>parseFloat(getComputedStyle(e).fontSize)));
+   els.forEach(e=>e.style.fontSize=fs+'px');
+   for(let i=0;i<80 && els.some(e=>e.getBoundingClientRect().width>avail);i++){fs-=3;els.forEach(e=>e.style.fontSize=fs+'px');}
+  });
+ });
+ // cursivas de capa e fechamento: no máximo 860px de largura
+ document.querySelectorAll('.scr.fit').forEach(e=>{let fs=parseFloat(getComputedStyle(e).fontSize);
+  while(e.getBoundingClientRect().width>860 && fs>90){fs-=4;e.style.fontSize=fs+'px';}});
+ // texto de apoio: encolhe até caber acima do rodapé (mínimo 38px)
+ document.querySelectorAll('.s').forEach(s=>{
+  const fx=s.querySelector('.fix'); if(!fx)return; const top=s.getBoundingClientRect().top; let fs=46;
+  while(fx.getBoundingClientRect().bottom-top>1130 && fs>38){fs-=2;s.querySelectorAll('.c .body').forEach(b=>b.style.fontSize=fs+'px');}
+ });
+ window.fitDone=true;
+});
+window.report=()=>{const o=[];document.querySelectorAll('.s').forEach(s=>{const sr=s.getBoundingClientRect();
+ s.querySelectorAll('.cond,.body,.fix,.num,.sp').forEach(e=>{const r=e.getBoundingClientRect();
+  const bad=(r.left<sr.left+60||r.right>sr.right-60||r.bottom>sr.top+1140);
+  if(bad)o.push(`${s.id} ${e.className} x:${Math.round(r.left-sr.left)}-${Math.round(r.right-sr.left)} y:${Math.round(r.top-sr.top)}-${Math.round(r.bottom-sr.top)} "${e.textContent.trim().slice(0,25)}"`)})});return o.join('\n')||'ok'}
+</script>
+</body></html>
