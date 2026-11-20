@@ -1,9 +1,12 @@
 # Carrossel Máquina
 
-Molde e posts dos carrosséis do @romariorenan.mkt.
+Molde, biblioteca e posts dos carrosséis do @romariorenan.mkt.
 
-- `maquina.html`: molde. Lê os textos de `posts/<pasta>/post.js`.
-- `rmaq.py`: gera as imagens (1080×1350, JPEG). Uso: `python3 rmaq.py <pasta-do-post> 3`
-- `posts/`: um diretório por carrossel, com os dados (`post.js`) e as imagens finais.
+- `molde/modelo-aprovado.html`: referência do design aprovado em 20/11/2026 (7 modelos de slide).
+- `molde/render.py`: gera as imagens em 1080×1350 (JPEG). Uso: `python3 molde/render.py <post.html> <pasta-de-saida> 3`
+- `marca/`: foto de perfil, lacre e luz de folhagem.
+- `biblioteca/`: fundos, luz, objetos e gravuras usados nas artes.
+- `posts/<data-assunto>/`: o HTML do post e as imagens finais.
 
-Os fundos e recortes da biblioteca ainda não estão neste repositório.
+Fontes via npm: `@fontsource/instrument-serif`, `@fontsource-variable/dm-sans`, `@fontsource/pinyon-script`.
+Os caminhos dentro dos HTML são relativos à raiz do repositório.
