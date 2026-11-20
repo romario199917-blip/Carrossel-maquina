@@ -6,6 +6,8 @@
     "@fontsource/league-gothic": "*",
     "@fontsource/cormorant-garamond": "*",
     "@fontsource/pinyon-script": "*",
-    "@fontsource-variable/playfair": "*"
+    "@fontsource-variable/playfair": "*",
+    "@fontsource/instrument-serif": "*",
+    "@fontsource-variable/dm-sans": "*"
   }
 }

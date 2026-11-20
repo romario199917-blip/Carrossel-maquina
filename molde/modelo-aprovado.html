@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:ISerif;src:url(node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2)}
+@font-face{font-family:ISerif;font-style:italic;src:url(node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2)}
+@font-face{font-family:Sans;src:url(node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2) format('woff2-variations');font-weight:100 1000}
+@font-face{font-family:Pinyon;src:url(node_modules/@fontsource/pinyon-script/files/pinyon-script-latin-400-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;display:flex;flex-wrap:wrap;gap:40px;padding:40px;width:3440px}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:Sans;-webkit-font-smoothing:antialiased;background:var(--bg);color:var(--fg)}
+.s>*{position:absolute}
+/* temas */
+.creme{--bg:#EFE8DA;--fg:#2A1B12;--mut:#7A6A5B;--acc:#6B1F28;--soft:#A38563;--line:rgba(42,27,18,.28);--card:#E4DAC6}
+.cafe{--bg:#2A1D15;--fg:#F4EDDF;--mut:#B9A894;--acc:#CDB38E;--soft:#CDB38E;--line:rgba(244,237,223,.38);--card:rgba(255,240,215,.06)}
+.bordo{--bg:#3A1016;--fg:#F6EEE1;--mut:#CDB0A8;--acc:#D9BE9B;--soft:#D9BE9B;--line:rgba(246,238,225,.36);--card:rgba(255,235,220,.06)}
+.musgo{--bg:#343A29;--fg:#F2EDDD;--mut:#BFC0A8;--acc:#DCD0A8;--soft:#DCD0A8;--line:rgba(242,237,221,.38);--card:rgba(255,250,225,.07)}
+/* camadas de fundo */
+.bgimg{inset:0;width:100%;height:100%;object-fit:cover}
+.light{inset:0;pointer-events:none}
+.paper{inset:0;pointer-events:none;z-index:1;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='360'><filter id='p' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='4' seed='7' stitchTiles='stitch'/><feDiffuseLighting lighting-color='white' surfaceScale='1.6'><feDistantLight azimuth='40' elevation='62'/></feDiffuseLighting></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>")}
+.creme .paper{mix-blend-mode:multiply;opacity:.5}
+.cafe .paper,.bordo .paper,.musgo .paper{mix-blend-mode:soft-light;opacity:.55}
+.wm{font-family:ISerif;font-style:italic;line-height:.8;color:var(--fg);opacity:.05;pointer-events:none;z-index:1}
+.z{z-index:3}
+/* cabeçalho */
+.hd{left:84px;right:84px;top:76px;display:flex;align-items:center;justify-content:space-between;z-index:4}
+.hd .me{display:flex;align-items:center;gap:20px}
+.hd img{width:88px;height:88px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--bg),0 0 0 3.5px var(--soft),0 10px 22px rgba(0,0,0,.28)}
+.hd .n{display:flex;align-items:center;gap:9px;font-weight:700;font-size:32px;letter-spacing:-.01em}
+.hd .u{font-size:25px;color:var(--mut);margin-top:1px}
+.hd svg{width:30px;height:30px}
+.lab{font-size:23px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--mut)}
+.lab b{font-weight:800;color:var(--fg)}
+/* rodapé */
+.ft{left:84px;right:84px;bottom:74px;display:flex;align-items:center;justify-content:space-between;z-index:4}
+.ft .ar{display:flex;align-items:center;gap:14px}
+.go{width:92px;height:92px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--fg)}
+/* tipografia */
+.h{font-family:ISerif;font-weight:400;line-height:.9;letter-spacing:-.035em;white-space:nowrap}
+.h i{color:var(--soft);letter-spacing:-.03em}
+.scr{font-family:Pinyon;line-height:1;white-space:nowrap}
+.p{font-size:36px;line-height:1.36;font-weight:400}
+.p b{font-weight:700}
+.rule{background:var(--line)}
+/* quadros */
+.frame{border:1.5px solid var(--line);border-radius:44px}
+.glass{background:var(--card);border:1.5px solid var(--line);border-radius:36px;box-shadow:0 40px 60px -24px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.10)}
+.pill{display:inline-block;border:1.5px solid var(--line);border-radius:999px;padding:11px 26px;font-size:22px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+.pill.on{font-weight:800;border-color:var(--fg)}
+/* caixa de seleção (destaque) */
+.sel{position:relative;display:inline-block;padding:0 .12em .04em;background:color-mix(in srgb,var(--soft) 22%,transparent);outline:1.5px solid var(--soft)}
+.sel::before,.sel::after{content:"";position:absolute;width:13px;height:13px;background:var(--soft)}
+.sel::before{left:-7px;top:-7px;box-shadow:calc(100% + 0px) 0 0 var(--soft)}
+.sel b.c1,.sel b.c2,.sel b.c3{position:absolute;width:13px;height:13px;background:var(--soft)}
+.sel::after{right:-7px;bottom:-7px}
+.sel b.c1{right:-7px;top:-7px}.sel b.c2{left:-7px;bottom:-7px}
+.sel::before{box-shadow:none}
+/* palavra com desfoque */
+.blur{position:relative;display:inline-block}
+.blur::before{content:attr(data-t);position:absolute;left:0;top:0;filter:blur(9px);opacity:.75}
+.blur span{-webkit-mask-image:linear-gradient(90deg,#000 0,#000 58%,transparent 92%);mask-image:linear-gradient(90deg,#000 0,#000 58%,transparent 92%)}
+</style></head><body>
+<script>
+const badge='<svg viewBox="0 0 24 24"><path fill="#1D9BF0" d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484z"/><path fill="#fff" d="M10.54 16.2 6.8 12.46l1.41-1.41 2.33 2.33 5.24-5.24 1.41 1.41z"/></svg>';
+const hd=()=>`<div class="hd"><div class="me"><img src="marca/avatar.jpg"><div><div class="n">Romário Renan ${badge}</div><div class="u">@romariorenan.mkt</div></div></div></div>`;
+const arrow='<svg width="46" height="16" viewBox="0 0 46 16"><path d="M1 8h42M36 2l7 6-7 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ft=(l,n,last)=>last?'':`<div class="go z" style="right:84px;bottom:74px"><svg width="40" height="16" viewBox="0 0 40 16"><path d="M1 8h36M30 2l7 6-7 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
+const sel=t=>`<span class="sel">${t}<b class="c1"></b><b class="c2"></b></span>`;
+document.body.innerHTML=`
+
+<!-- 1 · CAPA A (tipográfica) -->
+<section class="s cafe" id="p1">
+ <img class="bgimg" src="biblioteca/fundos/fundo-cafe-grao-sombra-01.jpg" style="filter:brightness(.55) saturate(.75)">
+ <img class="bgimg" src="marca/luz-folhagem.jpg" style="mix-blend-mode:soft-light;opacity:.55">
+ <div class="light" style="background:radial-gradient(60% 40% at 50% 46%,rgba(255,214,170,.14),transparent 70%),radial-gradient(120% 80% at 50% 120%,rgba(0,0,0,.6),transparent 70%)"></div>
+ <div class="paper"></div>
+ ${hd()}
+ <div class="z" style="left:0;right:0;top:270px;text-align:center"><span class="pill">Black Friday 2026</span></div>
+ <div class="z" style="left:0;right:0;top:372px;text-align:center">
+   <div class="h" style="font-size:118px;line-height:.96">Seu cliente vai</div>
+   <div class="h" style="font-size:118px;line-height:.96">perguntar pra IA</div>
+   <div class="h" style="font-size:118px;line-height:.96"><i>se a promoção</i></div>
+ </div>
+ <div class="z h nofit" style="left:0;right:0;top:716px;text-align:center;font-size:400px;letter-spacing:-.05em;background:linear-gradient(180deg,#FBF3E4 20%,#D9C3A0 75%,#A88A66);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 30px 34px rgba(0,0,0,.5))">é real?</div>
+ <div class="z" style="left:84px;bottom:92px;display:flex;align-items:center;gap:24px">
+   <div class="rule" style="width:80px;height:1.5px"></div>
+   <div class="p" style="font-size:34px;color:var(--mut)">O que fazer <b style="color:var(--fg)">antes do dia 27</b></div>
+ </div>
+ ${ft('',1)}
+</section>
+
+<!-- 1 · CAPA B (com elemento) -->
+<section class="s bordo" id="p7">
+ <div class="light" style="background:radial-gradient(70% 50% at 18% 6%,rgba(255,200,170,.22),transparent 70%),radial-gradient(110% 70% at 90% 105%,rgba(0,0,0,.6),transparent 70%)"></div>
+ <div class="paper"></div>
+ <div class="wm" style="font-size:1300px;left:-120px;top:230px;font-style:normal">?</div>
+ ${hd()}
+ <div class="z" style="left:84px;top:262px"><span class="pill">Black Friday 2026</span></div>
+ <div class="z" style="left:84px;top:356px">
+   <div class="h" style="font-size:176px">Seu cliente vai</div>
+   <div class="h" style="font-size:176px">perguntar pra IA</div>
+   <div class="h" style="font-size:176px"><i>se a promoção</i></div>
+   <div class="h" style="font-size:176px">${sel('é real.')}</div>
+ </div>
+ <img class="z" src="biblioteca/recortes/envelope-lacre.png" style="right:-170px;bottom:-120px;width:640px;transform:rotate(-14deg);filter:drop-shadow(0 40px 40px rgba(0,0,0,.55)) saturate(.9)">
+ <div class="z" style="left:84px;bottom:74px;display:flex;align-items:center;gap:26px"><div class="go" style="position:static"><svg width="40" height="16" viewBox="0 0 40 16"><path d="M1 8h36M30 2l7 6-7 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="p" style="font-size:34px;color:var(--mut)">O que fazer<br><b style="color:var(--fg)">antes do dia 27</b></div></div>
+</section>
+
+<!-- 2 · TEXTO -->
+<section class="s creme" id="p2">
+ <div class="light" style="background:radial-gradient(80% 60% at 15% 0%,rgba(255,255,255,.55),transparent 70%),radial-gradient(90% 60% at 100% 100%,rgba(150,115,75,.22),transparent 70%)"></div>
+ <div class="paper"></div>
+ <div class="wm" style="font-size:900px;right:-60px;bottom:-40px;opacity:.06;font-style:normal">86</div>
+ ${hd()}
+ <div class="z" style="left:150px;top:300px;width:520px"><div class="p">Pesquisa da Stefanini mostra uma mudança no jeito de comprar. <b>E ela pega muita loja de surpresa.</b></div></div>
+ <div class="rule z" style="left:150px;top:512px;width:1.5px;height:70px"></div>
+ <div class="rule z" style="left:150px;top:582px;width:300px;height:1.5px"></div>
+ <div class="z" style="right:110px;top:600px;text-align:right">
+   <div class="h" style="font-size:158px">86% vão usar</div>
+   <div class="h" style="font-size:158px">IA pra comprar</div>
+   <div class="h" style="font-size:158px"><i>e quase metade</i></div>
+   <div class="h" style="font-size:158px">quer <span class="blur" data-t="conferir."><span>conferir.</span></span></div>
+ </div>
+ <div class="z" style="right:110px;top:1180px;text-align:right" class="lab"><span class="lab">Fonte: Stefanini, <b>2026</b></span></div>
+ ${ft('Nº 01',2)}
+</section>
+
+<!-- 3 · DADO -->
+<section class="s bordo" id="p3">
+ <div class="light" style="background:radial-gradient(70% 45% at 78% 6%,rgba(255,190,160,.20),transparent 70%),radial-gradient(100% 70% at 10% 100%,rgba(0,0,0,.5),transparent 70%)"></div>
+ <div class="paper"></div>
+ ${hd()}
+ <div class="z h nofit" style="left:84px;top:210px;font-size:640px;letter-spacing:-.06em;background:linear-gradient(180deg,#F1DFC2 10%,#C7A57C 62%,#8D6A48);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 26px 30px rgba(0,0,0,.45))">47<span style="font-size:340px;letter-spacing:0">%</span></div>
+ <div class="glass z" style="left:84px;right:84px;top:740px;height:400px;padding:52px 56px">
+   <div class="h" style="font-size:96px">vão checar se o</div>
+   <div class="h" style="font-size:96px"><i>desconto é de verdade</i></div>
+   <div class="p" style="margin-top:34px;color:var(--mut)">Preço que subiu antes de "baixar" vai ser descoberto em segundos. <b style="color:var(--fg)">E vira print.</b></div>
+ </div>
+ <img class="z" src="marca/selo.png" style="right:120px;top:676px;width:132px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.5))">
+ ${ft('Nº 01',3)}
+</section>
+
+<!-- 4 · COMPARAÇÃO -->
+<section class="s musgo" id="p4">
+ <img class="bgimg" src="marca/luz-folhagem.jpg" style="mix-blend-mode:soft-light;opacity:.75;transform:scaleX(-1)">
+ <div class="light" style="background:radial-gradient(100% 70% at 50% 110%,rgba(0,0,0,.45),transparent 70%)"></div>
+ <div class="paper"></div>
+ ${hd()}
+ <div class="z" style="left:84px;top:232px">
+   <div class="h" style="font-size:186px">Dois jeitos de</div>
+   <div class="h" style="font-size:186px">dar <i>desconto.</i></div>
+ </div>
+ <div class="glass z" style="left:84px;top:610px;width:440px;height:520px;padding:44px 42px">
+   <div class="lab">O que <b>grita</b></div>
+   <div class="rule" style="height:1.5px;margin:26px 0 8px"></div>
+   ${['"Até 70% off"','Letra miúda','Preço inflado','Pressa falsa'].map(t=>`<div class="h" style="font-size:74px;line-height:1.3;letter-spacing:-.025em;opacity:.78">${t}</div>`).join('')}
+ </div>
+ <div class="z" data-card style="left:556px;top:580px;width:440px;height:580px;padding:44px 42px;background:#EFE8DA;color:#2A1B12;border-radius:36px;box-shadow:0 50px 70px -22px rgba(0,0,0,.6);--line:rgba(42,27,18,.28);--fg:#2A1B12;--mut:#7A6A5B">
+   <div class="lab">O que <b>prova</b></div>
+   <div class="rule" style="height:1.5px;margin:26px 0 8px"></div>
+   ${['Preço de antes','Preço de agora','Regra em 1 frase','Prazo real'].map(t=>`<div class="h" style="font-size:78px;line-height:1.36;letter-spacing:-.025em">${t}</div>`).join('')}
+   <div style="position:absolute;right:-22px;top:-22px;width:76px;height:76px;border-radius:50%;background:#343A29;border:1.5px solid #DCD0A8;display:grid;place-items:center"><svg width="34" height="26" viewBox="0 0 34 26"><path d="M3 13l9 9L31 3" fill="none" stroke="#DCD0A8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+ </div>
+ ${ft('Nº 01',4)}
+</section>
+
+<!-- 5 · LISTA -->
+<section class="s cafe" id="p5">
+ <div class="light" style="background:radial-gradient(70% 50% at 85% 10%,rgba(255,214,170,.16),transparent 70%),radial-gradient(100% 70% at 0% 100%,rgba(0,0,0,.5),transparent 70%)"></div>
+ <div class="paper"></div>
+ <div class="wm" style="font-size:1100px;left:-90px;bottom:-190px;font-style:normal">3</div>
+ ${hd()}
+ <div class="glass z" style="left:84px;right:84px;top:300px;height:850px;padding:92px 62px 0">
+   <div class="h" style="font-size:132px;text-align:center">Três ajustes</div>
+   <div class="h" style="font-size:132px;text-align:center"><i>que provam a oferta</i></div>
+   <div style="margin-top:44px;border-top:1.5px solid var(--line)">
+   ${[['1','Preço antigo e preço novo, lado a lado.'],['2','CNPJ, troca e avaliações à vista.'],['3','A regra da oferta em uma frase.']].map(([n,t])=>`<div style="display:flex;gap:34px;align-items:center;padding:28px 6px;border-bottom:1.5px solid var(--line)"><div class="h" style="font-size:118px;font-style:italic;color:var(--soft);width:64px;line-height:.8">${n}</div><div class="p" style="font-size:38px">${t}</div></div>`).join('')}
+   </div>
+ </div>
+ <img class="z" src="marca/selo.png" style="left:474px;top:238px;width:132px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.55))">
+ ${ft('Nº 01',5)}
+</section>
+
+<!-- 6 · FECHAMENTO -->
+<section class="s creme" id="p6">
+ <div class="light" style="background:radial-gradient(80% 60% at 85% 0%,rgba(255,255,255,.6),transparent 70%),radial-gradient(90% 60% at 0% 100%,rgba(150,115,75,.22),transparent 70%)"></div>
+ <div class="paper"></div>
+ ${hd()}
+ <img class="z" src="biblioteca/ilustracoes/gravura-mao-livro-01.jpg" style="right:-40px;bottom:120px;width:470px;mix-blend-mode:multiply;filter:sepia(.55) contrast(1.05);opacity:.9">
+ <div class="z" style="left:84px;top:270px">
+   <div class="h" style="font-size:210px">Desconto bom</div>
+   <div class="h" style="font-size:210px">não é o <i>maior.</i></div>
+   <div class="scr" style="font-size:150px;color:var(--acc);margin:22px 0 0 20px">é o que se prova.</div>
+ </div>
+ <div class="rule z" style="left:84px;top:880px;width:1.5px;height:90px"></div>
+ <div class="z p" style="left:118px;top:880px;width:440px;font-size:34px">Quem vende de verdade <b>não tem medo de conferência.</b></div>
+ <div class="z" style="left:84px;top:1060px;display:inline-flex;align-items:center;gap:18px;background:var(--fg);color:var(--bg);padding:26px 40px;border-radius:999px;font-size:30px;font-weight:600;box-shadow:0 22px 30px -12px rgba(42,27,18,.5)">
+   <svg width="32" height="28" viewBox="0 0 34 30"><path d="M2 14 32 2 22 28l-6-10z M16 18 32 2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg>Envia pra quem vende</div>
+ ${ft('Nº 01',6,true)}
+</section>`;
+
+document.fonts.ready.then(()=>{document.querySelectorAll('.h:not(.nofit),.scr').forEach(e=>{
+  const s=e.closest('.s').getBoundingClientRect(); const c=e.closest('.glass,[data-card]');
+  let L=s.left+84,R=s.right-84; if(c){const r=c.getBoundingClientRect(),cs=getComputedStyle(c);L=r.left+parseFloat(cs.paddingLeft);R=r.right-parseFloat(cs.paddingRight)}
+  const g=document.createRange();g.selectNodeContents(e); let fs=parseFloat(getComputedStyle(e).fontSize);
+  for(let i=0;i<80;i++){const q=g.getBoundingClientRect(); if(q.right<=R+1&&q.left>=L-1)break; fs-=3; e.style.fontSize=fs+'px';}
+ }); window.fitDone=true;});
+</script></body></html>
