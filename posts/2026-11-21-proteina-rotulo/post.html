@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+const sm=t=>`<span style="font-size:.42em;letter-spacing:-.02em;margin-left:.06em">${t}</span>`;
+montar([
+{m:'capaA',tema:'cafe',luz:'50% 42%',fundo:'<img class="bgimg" src="biblioteca/fundos/fundo-cafe-gradiente-01.jpg" style="filter:brightness(.6) saturate(.8)">',pill:'Consumo · 2026',linhas:['Até a cerveja','<i>agora tem</i>'],fs:150,grande:'proteína',fsG:300,mtG:-10,sub:'O que isso ensina sobre <b style="color:var(--fg)">vender</b>'},
+{m:'lista',tema:'creme',luz:'15% 0%',pill:'Lançados em 2026',linhas:['Saiu do pote','<i>de whey</i>'],fsNum:84,wNum:150,pad:26,
+ itens:[['10g','<b>Cerveja sem álcool.</b> Spaten Pro, da Ambev.'],['15g','<b>Picolé.</b> Urso, da Cimed com a Los Los.'],['30g','<b>Milkshake.</b> Pro + Zero, da Bacio di Latte.']],
+ nota:'Proteína por unidade, segundo as marcas.'},
+{m:'dado',tema:'musgo',luz:'85% 5%',extra:folha(.6,true),pill:'O tamanho disso',num:'21'+sm('%'),fsN:460,topN:300,
+ linhas:['dos lares do Brasil','<i>já compram</i>'],body:'São 12,8 milhões de casas levando produto com proteína adicionada. Em um ano, entraram 4,1 milhões. <b style="color:var(--fg)">Dado da Worldpanel by Numerator.</b>'},
+{m:'texto',tema:'bordo',luz:'20% 5%',pill:'O que aconteceu',linhas:['Ninguém pediu','<i>cerveja proteica.</i>'],
+ body:'O cliente já estava procurando proteína. As marcas colocaram a palavra em produtos que ele já comprava.',
+ box:'A categoria é a mesma. <b>Mudou o motivo pra escolher.</b>'},
+{m:'texto',tema:'creme',luz:'85% 0%',extra:wm('g','font-size:1100px;right:-20px;bottom:-60px;opacity:.05'),pill:'O outro lado',linhas:['A palavra','<i>também gasta.</i>'],
+ body:'A mesma pesquisa mostra o comprador migrando pra marcas mais baratas. Quando todo rótulo diz proteína, o preço volta a decidir.',
+ box:'Atributo que todo mundo tem <b>deixa de ser motivo.</b>'},
+{m:'lista',tema:'cafe',luz:'85% 8%',extra:folha(.5),pill:'No seu negócio',linhas:['Ache a sua','<i>palavra</i>'],
+ itens:[['1','O que seu cliente já procura antes de te achar?'],['2','Você entrega isso e não fala?'],['3','Dá pra provar com número, como os 10 g da lata?']]},
+{m:'fim',tema:'musgo',luz:'20% 0%',
+ linhas:['Ninguém criou','a vontade.'],script:'só deram o nome.',wBody:640,
+ body:'Venda melhora quando você usa <b>a palavra que o cliente já estava procurando.</b>',cta:'Envia pra quem tem produto bom e explica mal'}
+]);
+</script></body></html>

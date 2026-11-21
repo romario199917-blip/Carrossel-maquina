@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+const sm=t=>`<span style="font-size:.42em;letter-spacing:-.02em;margin-left:.06em">${t}</span>`;
+montar([
+{m:'capaA',tema:'musgo',luz:'50% 40%',extra:folha(.6),pill:'WhatsApp · novidade',linhas:['Lembrou do','<i>cliente às</i>'],fs:150,grande:'23h?',fsG:400,mtG:-20,sub:'Agora dá pra <b style="color:var(--fg)">agendar a mensagem</b>'},
+{m:'texto',tema:'creme',luz:'15% 0%',pill:'A cena',linhas:['Ou manda agora','ou <i>esquece.</i>'],
+ body:'Mandar às 23h pega mal. Deixar pra amanhã é torcer pra lembrar. No meio disso, o orçamento esfria.',
+ box:'Follow-up que depende da memória <b>é venda entregue à sorte.</b>'},
+{m:'dado',tema:'cafe',luz:'85% 5%',fundo:'<img class="bgimg" src="biblioteca/fundos/fundo-cafe-grao-sombra-01.jpg" style="filter:brightness(.55) saturate(.75)">',pill:'O que chegou',num:'14'+sm('dias'),fsN:440,topN:300,
+ linhas:['é o prazo máximo','<i>do agendamento</i>'],body:'O WhatsApp começou a liberar o agendamento de mensagens no Brasil. <b style="color:var(--fg)">Dá pra programar de 10 minutos a duas semanas à frente.</b>'},
+{m:'lista',tema:'bordo',luz:'15% 5%',extra:wm('9h','font-size:760px;right:-60px;bottom:-150px'),pill:'Como fazer',linhas:['No WhatsApp Web','<i>são três passos</i>'],
+ itens:[['1','Escreva a mensagem na conversa.'],['2','Clique no relógio que aparece no campo de texto.'],['3','Escolha o dia e a hora e confirme.']],
+ nota:'No celular o caminho pode mudar. Dá pra cancelar antes do envio.'},
+{m:'comp',tema:'musgo',luz:'85% 5%',extra:folha(.55,true),linhas:['O que já dá','<i>e o que não dá</i>'],topC:660,hC:390,
+ a:{lab:'<b>Ainda não</b>',itens:['Áudio','Documento'],serif:true},
+ b:{lab:'<b>Já funciona</b>',itens:['Texto','Foto'],serif:true},
+ nota:'Segundo testes do g1 em 19/11. A liberação é gradual.'},
+{m:'texto',tema:'creme',luz:'85% 0%',extra:wm('3','font-size:1000px;right:-30px;bottom:-200px;opacity:.05'),pill:'Onde usar',linhas:['Três mensagens','pra <i>agendar hoje</i>'],
+ body:'O retorno do orçamento, amanhã às 9h. O lembrete, um dia antes do horário marcado. O “chegou bem?”, três dias depois da entrega.',
+ box:'Você escreve na hora em que lembra. <b>O cliente recebe na hora certa.</b>'},
+{m:'fim',tema:'cafe',luz:'20% 0%',extra:folha(.5),obj:'biblioteca/recortes/ampulheta.png',objStyle:'right:-70px;bottom:-40px;width:230px;opacity:.9;filter:brightness(.9) sepia(.3);transform:rotate(5deg)',
+ linhas:['Lembre à noite.','Envie às 9h.'],script:'sem depender da memória.',fsS:120,wBody:520,
+ body:'Se o relógio ainda não apareceu aí, <b>atualize o app e teste no WhatsApp Web.</b>',cta:'Envia pra quem responde cliente de madrugada'}
+]);
+</script></body></html>

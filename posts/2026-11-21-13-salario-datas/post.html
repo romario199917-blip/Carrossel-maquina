@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+const sm=t=>`<span style="font-size:.42em;letter-spacing:-.02em;margin-left:.06em">${t}</span>`;
+montar([
+{m:'capaB',tema:'bordo',luz:'20% 0%',extra:folha(.5),pill:'13º salário · 2026',linhas:['Seu cliente','recebe até',sel('dia 30.')],
+ obj:'biblioteca/recortes/envelope-lacre.png',objStyle:'right:-40px;bottom:120px;width:430px;transform:rotate(-9deg);filter:drop-shadow(0 40px 40px rgba(0,0,0,.55))',sub:'E de novo até <b style="color:var(--fg)">18 de dezembro</b>'},
+{m:'dado',tema:'creme',luz:'85% 0%',pill:'O tamanho disso',num:'99,7'+sm('mi'),fsN:400,topN:318,
+ linhas:['de brasileiros','<i>recebem o 13º</i>'],body:'Estimativa do Dieese pra 2026, somando quem tem carteira assinada, aposentados e pensionistas. <b style="color:var(--fg)">Em média, R$ 3.720 por pessoa.</b>'},
+{m:'comp',tema:'cafe',luz:'15% 5%',extra:folha(.55),semCheck:true,linhas:['O dinheiro cai','<i>em duas datas</i>'],topC:660,hC:420,
+ a:{lab:'<b>1ª parcela</b>',big:'30/11',txt:'Prazo final. Em 2026, cai numa segunda-feira.'},
+ b:{lab:'<b>2ª parcela</b>',big:'18/12',txt:'Antecipada, porque o dia 20 cai num domingo.'},
+ nota:'A empresa pode pagar antes. Essas são as datas-limite.'},
+{m:'texto',tema:'musgo',luz:'80% 5%',pill:'O detalhe',linhas:['A Black Friday','é <i>3 dias antes.</i>'],
+ body:'Dia 27, sexta. O prazo da 1ª parcela vence na segunda, dia 30. Muita oferta vai chegar antes do dinheiro.',
+ box:'Quem gasta todo o desconto na sexta <b>fica sem assunto na semana em que o cliente recebe.</b>'},
+{m:'texto',tema:'creme',luz:'15% 0%',extra:wm('13','font-size:900px;right:-50px;bottom:-170px;opacity:.05'),pill:'Quem recebe agora',linhas:['62,5 milhões','<i>têm carteira.</i>'],
+ body:'É a maior fatia de quem recebe o 13º, segundo o Dieese. Se o seu cliente é CLT, ele tem dois pagamentos a mais até o Natal.',
+ box:'<b>Semana de pagamento é semana de decisão.</b> É quando a compra adiada tem mais chance de sair.'},
+{m:'lista',tema:'bordo',luz:'85% 8%',pill:'Pra já',linhas:['Marque agora','<i>no calendário</i>'],
+ itens:[['1','Guarde uma oferta pra semana do dia 30.'],['2','Prepare outra pra semana do dia 18 de dezembro.'],['3','Avise dois dias antes, no Stories e no WhatsApp.']]},
+{m:'fim',tema:'creme',luz:'85% 0%',
+ linhas:['O dinheiro tem','data marcada.'],script:'e a sua oferta?',wBody:600,
+ body:'Quem aparece na semana do pagamento <b>disputa menos no desconto.</b>',cta:'Salva as datas: 30/11 e 18/12',icone:'salva'}
+]);
+</script></body></html>

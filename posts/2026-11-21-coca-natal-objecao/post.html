@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+const sm=t=>`<span style="font-size:.42em;letter-spacing:-.02em;margin-left:.06em">${t}</span>`;
+montar([
+{m:'capaB',tema:'cafe',luz:'75% 55%',fundo:'<img class="bgimg" src="biblioteca/luz/luz-janela-parede-cafe-01.jpg" style="filter:brightness(.55) saturate(.8)">',pill:'Natal 2026 · campanha',linhas:['A Coca abriu','o Natal com','quem '+sel('odeia.')],fs:150,
+ obj:'biblioteca/recortes/vela.png',objStyle:'right:6px;bottom:-30px;width:250px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))',sub:'O que isso ensina sobre <b style="color:var(--fg)">objeção</b>'},
+{m:'texto',tema:'creme',luz:'15% 0%',pill:'Logo ela',linhas:['A marca que','<i>é dona da data.</i>'],
+ body:'As caravanas de Natal da Coca-Cola passam por mais de 200 cidades este ano. E a campanha de 2026 começa provocando quem diz não gostar do Natal.',
+ box:'O filme já roda no digital e <b>chega à TV em 1º de dezembro.</b>'},
+{m:'texto',tema:'bordo',luz:'85% 5%',extra:folha(.5,true),pill:'Por que funciona',linhas:['Todo mundo','<i>conhece um.</i>'],
+ body:'O que reclama do amigo secreto. A que foge da ceia. A marca podia ignorar essa turma. Preferiu começar a conversa por ela.',
+ box:'Quem diz “odeio” <b>já está pensando no assunto.</b>'},
+{m:'texto',tema:'musgo',luz:'15% 5%',extra:wm('?','font-size:1100px;right:-10px;bottom:-200px'),pill:'A lição',linhas:['Objeção é','<i>porta de entrada.</i>'],
+ body:'Quando a marca fala a dúvida primeiro, o cliente para de se defender e começa a escutar.',
+ box:'Esconder a objeção não faz ela sumir. <b>Só deixa o cliente sozinho com ela.</b>'},
+{m:'comp',tema:'cafe',luz:'85% 5%',linhas:['No seu','<i>negócio</i>'],topC:640,hC:450,
+ a:{lab:'<b>Fugindo</b>',itens:['“Qualidade e preço justo.”','“Atendimento diferenciado.”'],fsI:36},
+ b:{lab:'<b>Encarando</b>',itens:['“É mais caro, sim. Dura o dobro.”','“Leva 7 dias. É feito pra você.”'],fsI:36},
+ nota:'Frases de exemplo. Use a objeção real do seu cliente.'},
+{m:'lista',tema:'creme',luz:'85% 0%',pill:'Pra testar essa semana',linhas:['Três passos','<i>sem enrolar</i>'],
+ itens:[['1','Anote a frase que mais te faz perder venda.'],['2','Abra o próximo post com ela.'],['3','Responda com um fato, sem pedir desculpa.']]},
+{m:'fim',tema:'bordo',luz:'20% 0%',extra:folha(.45),
+ linhas:['A objeção já tá','na cabeça dele.'],script:'fale você primeiro.',wBody:620,
+ body:'Quem nomeia a dúvida do cliente antes dele <b>ganha a atenção que elogio nenhum compra.</b>',cta:'Envia pra quem trava no “tá caro”'}
+]);
+</script></body></html>
