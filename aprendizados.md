@@ -24,6 +24,26 @@ Da produção:
 - Quando a fonte oficial não abre, o post usa só o que duas matérias independentes confirmam e a legenda diz de onde veio o número.
 - Formatos do dia para comparar: ranking de casos (09:30), investigação (12:00), erro invisível com conta (18:30), identificação com passo a passo (21:00).
 
+## 2026-11-21 (produção)
+
+Do radar:
+- Metáfora que dá um papel ao leitor rende em carrossel: alfredosoares fez 3,8x a mediana com "você virou o despertador da empresa". https://www.instagram.com/p/Df7yW2QG5hp/
+- Contradição em primeira pessoa contra um conselho comum rende: "nunca misturar casamento com negócio. Eu faço justamente o contrário", 6,2x. https://www.instagram.com/p/Df8KLI6m-tM/
+- Pergunta prática de rotina, respondida com estudos, rende mesmo em perfil de mediana baixa: rafaelkiso fez 5x com o melhor horário pra postar. https://www.instagram.com/reel/Df9ovNJBMhm/
+- Assunto saturado esfria rápido: os posts de GTA 6 de 20/11 nas referências ficaram na mediana ou abaixo, dois dias depois do pico.
+
+Do próprio perfil:
+- 60 seguidores em 21/11 (59 em 20/11).
+- Primeiras leituras dos quatro posts de 20/11, com menos de 24 horas no ar: alcance de 9 a 15 contas, 5 a 7 curtidas, nenhum envio, nenhum comentário. Salvamentos: Stories 2, GTA 6 1, Google Ads 1, Kevin 0. O Kevin trouxe 1 seguidor. Os dois da manhã (09:30 e 12:00) tinham mais alcance que os da noite, mas também mais horas no ar. Não dá pra concluir nada antes das 48 horas.
+- O Windsor entregou dado em cache: a atualização forçada não está disponível no plano de teste.
+
+Da produção:
+- Quando as matérias divergem no número principal, ele sai do post: o total do 13º aparece como R$ 399,1 bi em duas e R$ 339,21 bi em outra, todas citando o Dieese. Ficou só o que as três confirmam.
+- Recurso de app sem comunicado oficial entra com a origem dita no slide ("segundo testes do g1") e com "liberação gradual".
+- Campanha que não deu pra assistir: o post afirma só o que as matérias descrevem e separa exemplo próprio de fato.
+- Rodízio de formatos entre horários, pra comparar com 20/11: identificação com passo a passo (09:30, ontem 21:00), dado com datas pra salvar (12:00, ontem 18:30), investigação (18:30, ontem 12:00), quebra de crença com comparação (21:00, formato novo).
+- A busca de assuntos gerais do dia rendeu pouco. Vale buscar por tema (cinema, esporte, economia, tecnologia) em vez de "assuntos do dia".
+
 ## Registro de mudanças nos manuais
 
 - 2026-11-20: criada a regra da camada de assunto (design) e o padrão de legenda (roteirista).
