@@ -6,7 +6,7 @@
   "capa": "Lembrou do cliente às 23h?",
   "score": 88,
   "sensivel": false,
-  "status": "pronto",
+  "status": "publicado",
   "imagens": [
    "https://raw.githubusercontent.com/romario199917-blip/Carrossel-maquina/cddbb50a8014ffc978c72801583b684fdc32f8ee/posts/2026-11-21-whatsapp-agendar/01.jpg",
    "https://raw.githubusercontent.com/romario199917-blip/Carrossel-maquina/cddbb50a8014ffc978c72801583b684fdc32f8ee/posts/2026-11-21-whatsapp-agendar/02.jpg",
@@ -17,8 +17,8 @@
    "https://raw.githubusercontent.com/romario199917-blip/Carrossel-maquina/cddbb50a8014ffc978c72801583b684fdc32f8ee/posts/2026-11-21-whatsapp-agendar/07.jpg"
   ],
   "legenda": "Onze da noite é a hora em que a gente lembra do cliente. E é a pior hora pra mandar mensagem.\n\nO WhatsApp começou a liberar no Brasil o agendamento de mensagens. Você escreve quando lembra e escolhe quando ela chega.\n\nComo funciona, pelo que já foi testado:\nNo WhatsApp Web, aparece um relógio no campo de texto. Clicou, escolheu dia e hora, pronto.\nO prazo vai de 10 minutos a duas semanas.\nPor enquanto dá pra agendar texto e foto. Áudio e documento ficaram de fora nos testes.\nDá pra cancelar antes do envio.\n\nPra quem vende, isso resolve o follow-up que morre no \"amanhã eu mando\".\n\nFollow-up que depende da memória é venda entregue à sorte.\n\nA liberação é gradual e a Meta ainda não disse quando chega pra todo mundo. Se não apareceu aí, atualize o app e olhe no WhatsApp Web.\n\nEnvia pra quem responde cliente de madrugada.\n\nFontes: testes do g1 (19/11), Canaltech, Paraíba Business, Economic News Brasil, Jornal Opção.",
-  "media_id": null,
-  "publicado_em": null
+  "media_id": "18098593025673307",
+  "publicado_em": "2026-11-21T09:29:02-03:00"
  },
  {
   "horario": "12:00",
