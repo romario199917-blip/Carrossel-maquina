@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+const sm=t=>`<span style="font-size:.42em;letter-spacing:-.02em;margin-left:.06em">${t}</span>`;
+montar([
+{m:'capaB',tema:'musgo',luz:'18% 6%',extra:folha(.5),pill:'Canva · 19 de novembro',linhas:['O Canva criou','um botão pra',sel('desligar a IA.')],fs:160,
+ obj:'biblioteca/recortes/pena.png',objStyle:'right:-40px;bottom:150px;width:330px;transform:rotate(8deg);filter:drop-shadow(0 40px 40px rgba(0,0,0,.55)) saturate(.9)',sub:'O que isso ensina <b style="color:var(--fg)">sobre escolha</b>'},
+{m:'dado',tema:'creme',luz:'15% 0%',pill:'A contradição',num:'38'+sm('bi'),fsN:430,topN:310,
+ linhas:['de usos das','<i>ferramentas de IA</i>'],body:'É o número que o próprio Canva divulga. <b style="color:var(--fg)">Mesmo assim, ele anunciou uma chave que esconde esses recursos.</b>'},
+{m:'comp',tema:'cafe',luz:'85% 5%',semCheck:true,linhas:['O que a chave','<i>faz no app</i>'],topC:640,hC:450,
+ a:{lab:'<b>Some</b>',itens:['Magic Expand, Canva Craft e os outros recursos generativos','Nos planos Free e Pro, sem custo'],fsI:34},
+ b:{lab:'<b>Continua</b>',fsI:38,itens:['Removedor de fundo','Captura Mágica (Magic Grab)']},
+ nota:'Fica em Perfil > Configurações > Permissões. A liberação é gradual.'},
+{m:'texto',tema:'bordo',luz:'80% 5%',extra:folha(.5,true),pill:'Sem recuo',linhas:['A IA continua.','<i>Só virou opção.</i>'],
+ body:'O Canva diz que não está reduzindo o investimento em IA. E prepara um selo pra marcar o design feito sem IA generativa.',
+ box:'Quem quer usar, usa. <b>Quem não quer, para de esbarrar nela.</b>'},
+{m:'texto',tema:'creme',luz:'85% 0%',extra:wm('?','font-size:1100px;right:-10px;bottom:-200px'),pill:'A lição',linhas:['Poder dizer não','<i>gera confiança.</i>'],
+ body:'Quando o cliente pode recusar, ele para de se sentir empurrado. E volta a prestar atenção no que você oferece.',
+ box:'Quem sabe que pode sair <b>fica mais tranquilo pra entrar.</b>'},
+{m:'lista',tema:'musgo',luz:'85% 8%',pill:'No seu negócio',linhas:['Três chaves','<i>pra oferecer</i>'],
+ itens:[['1','No robô do WhatsApp: “digite 2 pra falar com uma pessoa”.'],['2','Na lista de transmissão: “responda SAIR e eu paro de enviar”.'],['3','No pacote: deixe o cliente tirar o item que ele não quer.']]},
+{m:'fim',tema:'cafe',luz:'20% 5%',extra:folha(.55),
+ linhas:['Você desligaria','a IA do Canva?'],script:'ou deixava ligada?',wBody:600,
+ body:'Conta nos comentários e diz por quê. <b>Quero saber como você usa no dia a dia.</b>',cta:'Comenta: ligada ou desligada?',icone:'comenta'}
+]);
+</script></body></html>

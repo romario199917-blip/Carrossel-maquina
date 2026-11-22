@@ -11,3 +11,8 @@
 | 2026-11-21 | 12:00 | 13º salário: datas das parcelas (30/11 e 18/12) e a Black Friday três dias antes | O que ninguém te conta | Notícia com consequência | Salvamento | 89 | posts/2026-11-21-13-salario-datas |
 | 2026-11-21 | 18:30 | Proteína no rótulo (cerveja, picolé, milkshake): a palavra que o cliente já procurava | Por que isso está acontecendo? | Lacuna de curiosidade | Envio | 85 | posts/2026-11-21-proteina-rotulo |
 | 2026-11-21 | 21:00 | Coca-Cola abre o Natal 2026 por quem diz odiar a data: começar pela objeção | O problema não é o que você pensa | Contradição | Envio | 88 | posts/2026-11-21-coca-natal-objecao |
+| 2026-11-21 | 12:00 | (não publicado: falha do Instagram no download das mídias; reagendado pra 22/11 12:00) | - | - | - | - | - |
+| 2026-11-22 | 09:30 | Meta lança o Achados, app de usados sem comissão: vitrine pro que está parado no negócio | Olha o que mudou | Notícia com consequência | Envio | 86 | posts/2026-11-22-achados-meta |
+| 2026-11-22 | 12:00 | 13º salário: datas das parcelas (reagendado de 21/11, mesmo post) | O que ninguém te conta | Notícia com consequência | Salvamento | 89 | posts/2026-11-21-13-salario-datas |
+| 2026-11-22 | 18:30 | Canva cria chave que desliga a IA generativa: poder dizer não gera confiança | Por que isso está acontecendo? | Contradição | Comentário | 85 | posts/2026-11-22-canva-botao-ia |
+| 2026-11-22 | 21:00 | Fecomércio MG: 6 em 10 lojas mineiras ficam fora da Black Friday; ficar fora sem sumir | Qual desses dois você escolheria? | Número específico | Envio | 87 | posts/2026-11-22-bf-lojas-fora |

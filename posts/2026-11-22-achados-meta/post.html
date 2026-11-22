@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+montar([
+{m:'capaB',tema:'cafe',luz:'20% 5%',fundo:'<img class="bgimg" src="biblioteca/fundos/fundo-cafe-grao-sombra-01.jpg" style="filter:brightness(.55) saturate(.75)">',pill:'Meta · app novo',linhas:['A Meta lançou','um app de usados',sel('sem comissão.')],fs:150,
+ obj:'biblioteca/recortes/camera-aquarela.png',objStyle:'right:-40px;bottom:150px;width:360px;transform:rotate(7deg);filter:drop-shadow(0 36px 40px rgba(0,0,0,.55))',sub:'Chama Achados e <b style="color:var(--fg)">estreou no Brasil</b>'},
+{m:'texto',tema:'creme',luz:'15% 0%',pill:'17 de novembro',linhas:['Chama Achados.','<i>E começou aqui.</i>'],
+ body:'O Brasil foi o primeiro país a receber. Por enquanto, só no Android. O app junta os anúncios do Marketplace, dos grupos do Facebook e do Instagram.',
+ box:'A Meta não cobra comissão <b>e não entra no pagamento nem na entrega.</b>'},
+{m:'dado',tema:'bordo',luz:'82% 5%',extra:folha(.5,true),pill:'Por que agora',num:'46<span style="font-size:.5em;letter-spacing:0">%</span>',fsN:430,topN:310,
+ linhas:['já compraram','<i>usado pela internet</i>'],body:'Entre quem comprou online nos últimos 12 meses, segundo pesquisa CNDL/SPC Brasil. <b style="color:var(--fg)">Pra CNDL, usado deixou de ser nicho.</b>'},
+{m:'lista',tema:'musgo',luz:'15% 5%',pill:'Como funciona',linhas:['Três coisas','<i>pra saber</i>'],
+ itens:[['1','A IA sugere título, descrição, categoria e preço. Você revisa e publica.'],['2','O mesmo anúncio aparece no Achados e no Marketplace.'],['3','A conversa segue no chat do app ou no WhatsApp.']]},
+{m:'texto',tema:'creme',luz:'85% 0%',extra:wm('R$','font-size:700px;left:-60px;bottom:-190px;opacity:.045'),pill:'Pro seu negócio',linhas:['O que tá parado','<i>pode virar caixa.</i>'],
+ body:'Mostruário, ponta de estoque, o equipamento que você trocou. Tudo isso ocupa espaço e não paga boleto enquanto fica no fundo da loja.',
+ box:'Agora tem uma vitrine a mais pra isso, <b>sem comissão sobre a venda.</b>'},
+{m:'comp',tema:'cafe',luz:'85% 5%',semCheck:true,linhas:['Sem comissão','<i>tem um preço</i>'],topC:640,hC:440,
+ a:{lab:'A Meta <b>não faz</b>',itens:['Não processa o pagamento','Não cuida da entrega'],fsI:36},
+ b:{lab:'Fica <b>com você</b>',itens:['Combinar pagamento e retirada','Conferir tudo antes de entregar'],fsI:36},
+ nota:'Dá pra denunciar anúncio suspeito dentro do app.'},
+{m:'fim',tema:'bordo',luz:'20% 0%',extra:folha(.45),
+ linhas:['Vitrine nova,','regra antiga.'],script:'anúncio bom vende.',wBody:600,
+ body:'Foto clara, título direto e preço justo <b>continuam decidindo quem recebe a mensagem.</b>',cta:'Envia pra quem tem estoque parado'}
+]);
+</script></body></html>

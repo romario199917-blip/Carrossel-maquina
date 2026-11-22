@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"></head><body>
+<script src="molde/kit.js"></script>
+<script>
+const {sel,blur,wm,folha}=kit;
+const pc='<span style="font-size:.5em;letter-spacing:0">%</span>';
+montar([
+{m:'capaA',tema:'bordo',luz:'50% 42%',extra:folha(.5),pill:'Black Friday · 27/11',linhas:['Em Minas, as lojas que','<i>vão pular a Black Friday:</i>'],fs:104,grande:'6 em 10',fsG:330,mtG:-6,sub:'Pesquisa da <b style="color:var(--fg)">Fecomércio MG</b>'},
+{m:'dado',tema:'creme',luz:'15% 0%',pill:'O número exato',num:'60,1'+pc,fsN:400,topN:318,
+ linhas:['decidiram não','<i>fazer promoção</i>'],body:'Entre os varejistas mineiros que conhecem a data, segundo a Fecomércio MG. <b style="color:var(--fg)">Só 35,8% planejam alguma ação.</b>'},
+{m:'texto',tema:'musgo',luz:'85% 5%',extra:folha(.55,true),pill:'O motivo',linhas:['Eles conhecem','<i>a data, sim.</i>'],
+ body:'95,8% sabem o que é a Black Friday. Entre os que ficam fora, 56,4% dizem não ter interesse e 26,1% que a data não dá lucro no modelo deles.',
+ box:'Entrar pede preço menor, margem apertada <b>e, às vezes, dinheiro em estoque e divulgação.</b>'},
+{m:'comp',tema:'cafe',luz:'15% 5%',semCheck:true,linhas:['Entrar ou','<i>ficar fora?</i>'],topC:640,hC:440,
+ a:{lab:'<b>Entra</b> se',itens:['Tem margem pra dar desconto de verdade','Tem estoque que precisa girar'],fsI:36},
+ b:{lab:'<b>Fica fora</b> se',itens:['O desconto vira prejuízo','Seu cliente não escolhe por preço'],fsI:36},
+ nota:'Critérios meus, pra ajudar na conta. Não vêm da pesquisa.'},
+{m:'texto',tema:'creme',luz:'85% 0%',pill:'O erro',linhas:['Sumir','<i>a semana toda.</i>'],
+ body:'Ficar fora da promoção é uma coisa. Ficar calado é outra. Seu cliente vai passar a semana com o celular na mão, procurando o que comprar.',
+ box:'Quem não dá desconto <b>ainda pode dar motivo: prazo, brinde, garantia, atendimento.</b>'},
+{m:'lista',tema:'bordo',luz:'85% 8%',pill:'Se você ficar fora',linhas:['Três jeitos','<i>de aparecer</i>'],
+ itens:[['1','Diga por que o seu preço é o mesmo o ano inteiro.'],['2','Ofereça o que não mexe na margem: frete, brinde, prazo.'],['3','Fale com quem já comprou. Essa lista é só sua.']]},
+{m:'fim',tema:'musgo',luz:'20% 0%',obj:'biblioteca/recortes/ampulheta.png',objStyle:'right:-10px;bottom:-30px;width:300px;transform:rotate(6deg);filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))',
+ linhas:['Pular o desconto','não é sumir.'],script:'apareça mesmo assim.',wBody:520,
+ body:'Entrar ou não é decisão sua. <b>Só precisa vir de uma conta, e não do medo.</b>',cta:'Envia pra quem ainda não decidiu'}
+]);
+</script></body></html>

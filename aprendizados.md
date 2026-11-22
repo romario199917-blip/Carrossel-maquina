@@ -44,6 +44,28 @@ Da produção:
 - Rodízio de formatos entre horários, pra comparar com 20/11: identificação com passo a passo (09:30, ontem 21:00), dado com datas pra salvar (12:00, ontem 18:30), investigação (18:30, ontem 12:00), quebra de crença com comparação (21:00, formato novo).
 - A busca de assuntos gerais do dia rendeu pouco. Vale buscar por tema (cinema, esporte, economia, tecnologia) em vez de "assuntos do dia".
 
+## 2026-11-22 (produção)
+
+Do radar:
+- Pergunta de dois lados sobre a decisão de uma empresa rende comentário mesmo em perfil de mediana baixa: g4.business fez 12,3x com "genialidade ou tiro no pé?". https://www.instagram.com/p/DgAhjRuFY-e/
+- Reação curta a uma ação de marca do dia rende: tiagotessmann fez 5,9x com um carrossel sobre uma sacada da Seara. https://www.instagram.com/p/DgAStVCINSu/
+- App ou recurso novo de plataforma, com estreia no Brasil, rende acima da média: rafaelkiso fez 3,9x com o Achados. https://www.instagram.com/reel/Df_6nVghVro/
+- Frase de identidade, curta e sem notícia, foi o maior resultado do período (pedrosobral, 12x). É formato de perfil grande; fica anotado, sem virar pauta. https://www.instagram.com/p/DgAhB4CFWN-/
+
+Do próprio perfil:
+- 62 seguidores em 22/11 (60 em 21/11).
+- Nenhum post passou de 48 horas no ar na hora da leitura. Com 31 a 43 horas, os de 20/11 têm alcance de 12 a 17 contas, 5 a 7 curtidas, até 2 salvamentos, nenhum envio e nenhum comentário. Os de 21/11, com menos de 20 horas, têm alcance de 6 a 9.
+- O que já aparece, sem valer como conclusão: o score (85 a 89) não separa os posts, porque todos ficam na mesma faixa de alcance. Os dois únicos seguidores vindos de post vieram de campanha de marca grande (Kevin e Coca-Cola). Envio continua zerado em todos.
+- O post das 12:00 de 21/11 falhou na publicação por timeout do Instagram ao baixar as mídias. As imagens têm de 390 a 610 KB, o mesmo tamanho dos posts que publicaram, então o tamanho não explica.
+
+Da produção:
+- Post pronto que não publicou por falha técnica volta pra fila do dia seguinte no mesmo horário, se o conteúdo ainda vale (13º salário: datas de 30/11 e 18/12).
+- Primeiro post com objetivo de comentário (Canva, 18:30). O perfil nunca recebeu comentário; serve de linha de base.
+- Pesquisa regional entra com o estado na capa e na legenda, e número arredondado na capa leva o número exato no slide 2.
+- Critério ou exemplo que é meu, e não da fonte, vem rotulado no slide ("critérios meus").
+- Rodízio do dia: mudança de plataforma com aplicação (09:30), dado com datas (12:00), investigação com pergunta no fim (18:30), duelo com número na capa (21:00, formato novo).
+- Domingo rende pouca notícia do dia. As pautas vieram da semana (9 a 21/11). Vale guardar reservas boas da sexta e do sábado pro radar de domingo.
+
 ## Registro de mudanças nos manuais
 
 - 2026-11-20: criada a regra da camada de assunto (design) e o padrão de legenda (roteirista).
