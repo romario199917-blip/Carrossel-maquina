@@ -27,7 +27,7 @@
   "capa": "Seu cliente recebe até dia 30.",
   "score": 89,
   "sensivel": false,
-  "status": "pronto",
+  "status": "publicado",
   "imagens": [
    "https://raw.githubusercontent.com/romario199917-blip/Carrossel-maquina/cddbb50a8014ffc978c72801583b684fdc32f8ee/posts/2026-11-21-13-salario-datas/01.jpg",
    "https://raw.githubusercontent.com/romario199917-blip/Carrossel-maquina/cddbb50a8014ffc978c72801583b684fdc32f8ee/posts/2026-11-21-13-salario-datas/02.jpg",
@@ -38,8 +38,8 @@
    "https://raw.githubusercontent.com/romario199917-blip/Carrossel-maquina/cddbb50a8014ffc978c72801583b684fdc32f8ee/posts/2026-11-21-13-salario-datas/07.jpg"
   ],
   "legenda": "Seu cliente tem dois dias de pagamento a mais até o Natal. Você sabe quais são?\n\nO Dieese estima que 99,7 milhões de brasileiros recebem 13º em 2026. Em média, R$ 3.720 por pessoa.\n\nAs datas-limite:\n1ª parcela até 30 de novembro, que cai numa segunda.\n2ª parcela até 18 de dezembro, antecipada porque o dia 20 é domingo.\n\nAgora olha o calendário. A Black Friday é dia 27, sexta. Três dias antes do prazo da primeira parcela. Muita oferta vai chegar antes do dinheiro.\n\nNão precisa fugir da Black Friday. Só não gaste tudo nela.\n\nQuem aparece na semana do pagamento disputa menos no desconto.\n\nSalva as datas pra montar o calendário de ofertas: 30/11 e 18/12.\n\nA empresa pode pagar antes do prazo, então vale perguntar pro seu cliente quando cai o dele. O total que o 13º movimenta aparece com valores diferentes nas matérias, por isso ficou de fora.\nFontes: Dieese, via SBT News, Times Brasil e O Tempo (Folhapress).",
-  "media_id": null,
-  "publicado_em": null,
+  "media_id": "18099303623440476",
+  "publicado_em": "2026-11-22T11:59:09-03:00",
   "observacao": "Reagendado de 21/11 12:00, onde falhou por timeout do Instagram no download das mídias. Mesmo post, mesmas imagens."
  },
  {
