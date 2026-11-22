@@ -4,6 +4,9 @@
 /* camada de assunto: Natal + refrigerante (vermelho vivo, pinheiro, dourado) */
 .verm{--bg:#C4141D;--fg:#FFF8EE;--mut:#FFD8CC;--acc:#FFE3A3;--soft:#FFE3A3;--line:rgba(255,245,235,.46);--card:rgba(110,0,10,.26);background:linear-gradient(180deg,#E8222C 0%,#CB1620 42%,#8C0913 100%) !important}
 .pinho{--bg:#0F3B2C;--fg:#F6F0E2;--mut:#B7CDBD;--acc:#F2D48A;--soft:#F2D48A;--line:rgba(246,240,226,.36);--card:rgba(255,255,255,.06);background:linear-gradient(180deg,#165241 0%,#0F3B2C 50%,#092519 100%) !important}
+.rubi{--bg:#7A0A12;--fg:#FBF3E6;--mut:#E9C9BD;--acc:#F0D9A4;--soft:#F0D9A4;--line:rgba(250,236,214,.40);--card:rgba(60,0,6,.3);background:radial-gradient(115% 85% at 26% 30%,#CF1823 0%,#A80F19 36%,#640710 74%,#3C0308 100%) !important}
+.rubi .paper{mix-blend-mode:soft-light;opacity:.5}
+.rubi .h{text-shadow:0 10px 40px rgba(40,0,4,.45)}
 .creme{--acc:#C4141D !important;--soft:#C4141D !important}
 .verm .paper,.pinho .paper{mix-blend-mode:soft-light;opacity:.5}
 .card2{--bgd:#0F3B2C}
@@ -86,6 +89,46 @@ function copo(){seed=5;
  </svg>`}
 const copoURI='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(copo());
 
+// ---------- bola de vidro com refrigerante dentro (peça única da capa) ----------
+function bolaCola(R=235,cy=1000,H=1300,fio=0){seed=9;const cx=260,ys=cy-R*.12,hw=Math.sqrt(R*R-(ys-cy)*(ys-cy));
+ let bub='';for(let i=0;i<60;i++){const a=rnd()*Math.PI*2,d=Math.sqrt(rnd())*R*.86,x=cx+Math.cos(a)*d,y=cy+Math.abs(Math.sin(a))*d*.92+6,r=1.5+rnd()*rnd()*9;if(y<ys+14)continue;
+  bub+=`<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="rgba(255,225,190,.10)" stroke="rgba(255,225,190,.55)" stroke-width="1.1"/><circle cx="${f(x-r*.3)}" cy="${f(y-r*.3)}" r="${f(r*.22)}" fill="#fff" opacity=".7"/>`}
+ let esp='';for(let i=0;i<70;i++){const t=rnd()*2-1,x=cx+t*hw*.97,y=ys+(rnd()-.5)*14*(1-t*t)+ (1-t*t)*4,r=2+rnd()*5;esp+=`<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="#EBCFAE" opacity="${f(.35+rnd()*.5)}"/>`}
+ const sp=(x,y,z,o=1)=>`<path d="M${x},${y-z} Q${x+z*.12},${y-z*.12} ${x+z},${y} Q${x+z*.12},${y+z*.12} ${x},${y+z} Q${x-z*.12},${y+z*.12} ${x-z},${y} Q${x-z*.12},${y-z*.12} ${x},${y-z}Z" fill="#FFEFC4" opacity="${o}"/>`;
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 ${H}"><defs>
+ <clipPath id="esf"><circle cx="${cx}" cy="${cy}" r="${R}"/></clipPath>
+ <radialGradient id="vid" cx="38%" cy="30%" r="78%"><stop offset="0" stop-color="#fff" stop-opacity=".26"/><stop offset=".55" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity=".14"/></radialGradient>
+ <linearGradient id="col" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A2410"/><stop offset=".3" stop-color="#3A120A"/><stop offset="1" stop-color="#120403"/></linearGradient>
+ <radialGradient id="amb" cx="70%" cy="82%" r="55%"><stop offset="0" stop-color="#E06A26" stop-opacity=".75"/><stop offset=".55" stop-color="#B5471A" stop-opacity=".25"/><stop offset="1" stop-color="#B5471A" stop-opacity="0"/></radialGradient>
+ <radialGradient id="som" cx="50%" cy="50%" r="50%"><stop offset=".62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#1A0002" stop-opacity=".6"/></radialGradient>
+ <linearGradient id="ouro" x1="0" x2="1"><stop offset="0" stop-color="#8C6A22"/><stop offset=".3" stop-color="#FFEDB5"/><stop offset=".55" stop-color="#D9AE55"/><stop offset="1" stop-color="#7A5A1A"/></linearGradient>
+ <filter id="d8" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter><filter id="d22" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="22"/></filter><filter id="d40" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter></defs>
+ <ellipse cx="${cx}" cy="${cy+R*.2}" rx="${R*.95}" ry="${R*.95}" fill="#FF5A3C" opacity=".22" filter="url(#d40)"/>
+ ${fio<0?"":`<line x1="${cx}" y1="${fio}" x2="${cx}" y2="${cy-R-52}" stroke="#E9CB84" stroke-opacity=".85" stroke-width="2.2"/>`}
+ <circle cx="${cx}" cy="${cy-R-40}" r="14" fill="none" stroke="url(#ouro)" stroke-width="4"/>
+ <rect x="${cx-34}" y="${cy-R-28}" width="68" height="40" rx="7" fill="url(#ouro)"/>
+ ${[-24,-12,0,12,24].map(d=>`<line x1="${cx+d}" y1="${cy-R-24}" x2="${cx+d}" y2="${cy-R+8}" stroke="#6B4E14" stroke-opacity=".45" stroke-width="2"/>`).join('')}
+ <circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#vid)"/>
+ <g clip-path="url(#esf)">
+  <rect x="0" y="${ys}" width="520" height="${R*2}" fill="url(#col)" opacity=".96"/>
+  <rect x="0" y="${ys}" width="520" height="${R*2}" fill="url(#amb)"/>
+  ${bub}
+  <ellipse cx="${cx}" cy="${ys}" rx="${hw}" ry="${R*.085}" fill="#8A3E1C"/>
+  <ellipse cx="${cx}" cy="${ys}" rx="${hw}" ry="${R*.085}" fill="none" stroke="#E8C7A0" stroke-opacity=".7" stroke-width="3"/>
+  ${esp}
+  <circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#som)"/>
+  <ellipse cx="${cx-R*.42}" cy="${cy-R*.5}" rx="${R*.34}" ry="${R*.2}" fill="#fff" opacity=".5" filter="url(#d22)" transform="rotate(-38 ${cx-R*.42} ${cy-R*.5})"/>
+  <path d="M${cx-R*.74},${cy-R*.2} A${R*.78},${R*.78} 0 0 1 ${cx-R*.22},${cy-R*.74}" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="${R*.045}" stroke-linecap="round" filter="url(#d8)"/>
+  <path d="M${cx-R*.7},${cy-R*.26} A${R*.76},${R*.76} 0 0 1 ${cx-R*.3},${cy-R*.69}" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="${R*.018}" stroke-linecap="round"/>
+  <path d="M${cx+R*.9},${cy+R*.1} A${R*.9},${R*.9} 0 0 1 ${cx+R*.2},${cy+R*.88}" fill="none" stroke="#FFD9B0" stroke-opacity=".5" stroke-width="${R*.03}" stroke-linecap="round" filter="url(#d8)"/>
+ </g>
+ <circle cx="${cx}" cy="${cy}" r="${R-1}" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>
+ ${sp(cx-R*1.04,cy-R*.6,24,.95)}${sp(cx+R*.82,cy-R*1.02,14,.8)}${sp(cx-R*1.0,cy+R*.5,10,.7)}
+ </svg>`}
+const uri=x=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(x);
+const ouroPo=(sd,area)=>{seed=sd;let s='';for(let i=0;i<70;i++){const x=area[0]+rnd()*(area[2]-area[0]),y=area[1]+rnd()*(area[3]-area[1]),r=.8+rnd()*2.4;s+=`<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="#F6DFA6" opacity="${f(.2+rnd()*.6)}"/>`}
+ for(let i=0;i<9;i++){const x=area[0]+rnd()*(area[2]-area[0]),y=area[1]+rnd()*(area[3]-area[1]),r=26+rnd()*44;s+=`<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="#FFD9A0" opacity="${f(.05+rnd()*.09)}" filter="url(#b14)"/>`}return art(s)};
+
 // ---------- cenas ----------
 seed=3;
 const guirlanda=art(`<g filter="url(#sombra)">${ramo([1130,-30],[900,40],[610,150],64,{galhos:[[.22,1,210],[.42,-1,150],[.58,1,170],[.76,-1,110]],w:9})}
@@ -102,15 +145,15 @@ const pe=art(`<g filter="url(#sombra)">${ramo([520,1392],[640,1330],[770,1296],4
 const luzes=(sd,area=[0,180,1080,1350])=>art(bokeh(22,area,['#FFE3A3','#FFFFFF','#FFC56B'],sd)+neve(30,sd+1));
 
 montar([
-{m:'capaB',tema:'verm',luz:'20% 0%',extra:luzes(8,[0,560,1080,1350])+guirlanda,pill:'Natal 2026 · campanha',linhas:['A Coca abriu','o Natal com','quem '+sel('odeia.')],fs:150,
- obj:copoURI,objStyle:'right:52px;bottom:54px;width:300px;filter:drop-shadow(0 34px 34px rgba(60,0,6,.6))',sub:'O que isso ensina sobre <b style="color:var(--fg)">objeção</b>'},
+{m:'capaB',tema:'rubi',luz:'22% 8%',extra:ouroPo(6,[420,260,1080,1350]),pill:'Natal 2026 · campanha',linhas:['A Coca abriu','o Natal com','quem <i>odeia.</i>'],fs:162,
+ obj:uri(bolaCola(215,1012)),objStyle:'right:-70px;top:0;width:520px;height:1300px',sub:'O que isso ensina sobre <b style="color:var(--fg)">objeção</b>'},
 {m:'texto',tema:'creme',luz:'15% 0%',extra:raminho(),pill:'Logo ela',linhas:['A marca que','<i>é dona da data.</i>'],
  body:'As caravanas de Natal da Coca-Cola passam por mais de 200 cidades este ano. E a campanha de 2026 começa provocando quem diz não gostar do Natal.',
  box:'O filme já roda no digital e <b>chega à TV em 1º de dezembro.</b>'},
 {m:'texto',tema:'pinho',luz:'85% 5%',extra:luzes(14),pill:'Por que funciona',linhas:['Todo mundo','<i>conhece um.</i>'],
  body:'O que reclama do amigo secreto. A que foge da ceia. A marca podia ignorar essa turma. Preferiu começar a conversa por ela.',
  box:'Quem diz “odeio” <b>já está pensando no assunto.</b>'},
-{m:'texto',tema:'verm',luz:'15% 5%',extra:art(gas(16,[520,1070,1080,1350],4))+wm('?','font-size:1100px;right:-10px;bottom:-200px'),pill:'A lição',linhas:['Objeção é','<i>porta de entrada.</i>'],
+{m:'texto',tema:'rubi',luz:'15% 5%',extra:art(gas(16,[520,1070,1080,1350],4))+wm('?','font-size:1100px;right:-10px;bottom:-200px'),pill:'A lição',linhas:['Objeção é','<i>porta de entrada.</i>'],
  body:'Quando a marca fala a dúvida primeiro, o cliente para de se defender e começa a escutar.',
  box:'Esconder a objeção não faz ela sumir. <b>Só deixa o cliente sozinho com ela.</b>'},
 {m:'comp',tema:'pinho',luz:'85% 5%',extra:luzes(27,[0,160,1080,640]),linhas:['No seu','<i>negócio</i>'],topC:640,hC:450,
@@ -119,9 +162,9 @@ montar([
  nota:'Frases de exemplo. Use a objeção real do seu cliente.'},
 {m:'lista',tema:'creme',luz:'85% 0%',extra:raminho(),pill:'Pra testar essa semana',linhas:['Três passos','<i>sem enrolar</i>'],
  itens:[['1','Anote a frase que mais te faz perder venda.'],['2','Abra o próximo post com ela.'],['3','Responda com um fato, sem pedir desculpa.']]},
-{m:'fim',tema:'verm',luz:'20% 0%',extra:luzes(40,[0,620,1080,1350])+guirlandaFim,
- obj:copoURI,objStyle:'right:52px;bottom:54px;width:270px;filter:drop-shadow(0 34px 34px rgba(60,0,6,.6))',
- linhas:['A objeção já tá','na cabeça dele.'],fs:190,script:'fale você primeiro.',wBody:560,
+{m:'fim',tema:'rubi',luz:'20% 0%',extra:ouroPo(12,[520,620,1080,1350]),
+ obj:uri(bolaCola(130,985,1300,-1)),objStyle:'right:-30px;top:0;width:520px;height:1300px',
+ linhas:['A objeção já tá','na cabeça dele.'],fs:190,script:'fale você primeiro.',wBody:500,
  body:'Quem nomeia a dúvida do cliente antes dele <b>ganha a atenção que elogio nenhum compra.</b>',cta:'Envia pra quem trava no “tá caro”'}
 ]);
 </script></body></html>
