@@ -2,7 +2,7 @@
 
 Manual de operação. Toda execução automática começa lendo este arquivo inteiro, depois `aprendizados.md`, `historico.md` e a fila do dia.
 
-Dono: Romário Renan (Unique Marketing). Meta: 4 carrosséis por dia, por pelo menos 30 dias a partir de 20/11/2026, para medir crescimento do perfil. Público: empresários, pequenos empresários e quem gosta de marketing, design e negócios.
+Dono: Romário Renan (Unique Marketing). Meta: 2 carrosséis por dia (eram 4 até 22/11; reduzido em 23/11 a pedido do Romário, porque a produção de 4 estourou o limite de uso do plano), por pelo menos 30 dias a partir de 20/11/2026, para medir crescimento do perfil. Público: empresários, pequenos empresários e quem gosta de marketing, design e negócios.
 
 ## Ambiente
 
@@ -36,7 +36,7 @@ Se o radar, o render ou o push falhar, dizer o que falhou no resumo. Nunca inven
 
 ## Fila e publicação
 
-Horários: 09:30, 12:00, 18:30 e 21:00. Nas semanas 1 e 2, rodar os formatos entre os horários para comparar. A partir da semana 3, usar os números do próprio perfil para mover horários (registrar a mudança aqui).
+Horários: 12:00 e 21:00 (desde 24/11/2026; 09:30 e 18:30 estão desligados). Produzir só dois posts por dia, os dois melhores do filtro, e economizar etapas: radar enxuto e no máximo duas rodadas de roteiro por pauta. Nas semanas 1 e 2, rodar os formatos entre os horários para comparar. A partir da semana 3, usar os números do próprio perfil para mover horários (registrar a mudança aqui).
 
 `fila/AAAA-MM-DD.json` é uma lista:
 
@@ -48,7 +48,7 @@ Horários: 09:30, 12:00, 18:30 e 21:00. Nas semanas 1 e 2, rodar os formatos ent
 
 Status: `pronto` (pode publicar), `aguardando-aprovacao` (tema sensível, só publica depois do ok do Romário), `publicado`, `falhou`.
 
-Rotina de publicação (quatro vezes por dia): ler a fila de hoje, pegar o item do horário, publicar só se o status for `pronto`, gravar `publicado`, `media_id` e a hora, e fazer push. Nunca publicar duas vezes o mesmo item. Se não houver item pronto, não publicar nada.
+Rotina de publicação (duas vezes por dia): ler a fila de hoje, pegar o item do horário, publicar só se o status for `pronto`, gravar `publicado`, `media_id` e a hora, e fazer push. Nunca publicar duas vezes o mesmo item. Se não houver item pronto, não publicar nada.
 
 A produção só cria posts para horários que ainda não têm item na fila do dia.
 

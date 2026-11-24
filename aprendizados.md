@@ -70,3 +70,5 @@ Da produção:
 
 - 2026-11-20: criada a regra da camada de assunto (design) e o padrão de legenda (roteirista).
 - 2026-11-20: criado `molde/kit.js` com o CSS e os modelos de slide do molde aprovado (capa A, capa B, texto, dado, comparação, lista, fechamento), mais a checagem automática de margem e de texto vazando do cartão. Motivo: produzir três posts por madrugada sem copiar CSS de um post pro outro. Nenhuma regra visual mudou.
+
+- 2026-11-23: a produção falhou por limite de uso do plano e o dia ficou sem post. Meta reduzida de 4 para 2 carrosséis por dia (12:00 e 21:00).
